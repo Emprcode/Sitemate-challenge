@@ -8,6 +8,7 @@ const app = express();
 
 const PORT = 8000;
 
+//middlewares
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));

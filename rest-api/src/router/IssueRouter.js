@@ -9,7 +9,6 @@ import {
 const router = express.Router();
 
 // create Issue
-
 router.post("/", async (req, res, next) => {
   try {
     const result = await createIssue(req.body);
@@ -28,7 +27,7 @@ router.post("/", async (req, res, next) => {
     next(error);
   }
 });
-// get/read Issue
+// get/read Issues
 
 router.get("/", async (req, res, next) => {
   try {
@@ -36,25 +35,24 @@ router.get("/", async (req, res, next) => {
     console.log(result);
     res.json({
       status: "success",
-      message: "success",
+      message: "fetch successful",
       result,
     });
   } catch (error) {
     next(error);
   }
 });
-// update Issue
 
+// update Issue
 router.patch("/", async (req, res, next) => {
   try {
     console.log(req.body);
     const result = await updateIssue(req.body);
-
     console.log(result);
     result._id
       ? res.json({
           status: "success",
-          message: "success",
+          message: "Issue updated Successfully!",
           result,
         })
       : res.json({
@@ -74,7 +72,7 @@ router.delete("/:_id", async (req, res, next) => {
     result._id
       ? res.json({
           status: "success",
-          message: "success",
+          message: "Issue deleted successfully",
           result,
         })
       : res.json({
