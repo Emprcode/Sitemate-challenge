@@ -52,7 +52,9 @@ const App = () => {
 
   return (
     <Container className="p-2 mt-4">
-      <h3 className="text-center fw-bold">Issue Form</h3>
+      <h2 className="text-center fw-bold p-3">Issues Managing app</h2>
+      <hr />
+      <h4 className="fw-bold text-center"> Issue form</h4>
       <div className="d-flex justify-content-center">
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
@@ -82,7 +84,11 @@ const App = () => {
               onChange={handleChange}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button
+            variant="outline-primary"
+            type="submit"
+            className="fw-bold mx-2"
+          >
             Submit
           </Button>
         </Form>
@@ -105,13 +111,11 @@ const App = () => {
                   <td>{issue.id}</td>
                   <td>{issue.title}</td>
                   <td>{issue.description}</td>
-                  <td>
+                  <td className=" d-flex gap-2">
                     <UpdateIssueForm
                       fetchIssues={fetchIssues}
                       _id={issue._id}
                     />{" "}
-                    {/* </td>
-                  <td> */}
                     <Button
                       variant="danger "
                       className=""
