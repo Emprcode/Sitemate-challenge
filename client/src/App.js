@@ -1,4 +1,3 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { Button, Container, Form, Table } from "react-bootstrap";
@@ -12,7 +11,7 @@ const App = () => {
 
   console.log(issues);
 
-  //post task
+  //post issue
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormDt({
@@ -37,12 +36,14 @@ const App = () => {
     status === "success" && setIssues(result);
   };
 
-  //delete task
+  //delete issue
 
   const handleDelete = async (_id) => {
-    const { status, result } = await deleteIssue(_id);
-    console.log(result);
-    status === "success" && fetchIssues();
+    if (window.confirm("Are you sure you want to delete this issue?")) {
+      const { status, result } = await deleteIssue(_id);
+      console.log(result);
+      status === "success" && fetchIssues();
+    }
   };
 
   useEffect(() => {

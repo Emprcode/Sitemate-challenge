@@ -2,7 +2,7 @@ import axios from "axios";
 
 const IssueAPI = "http://localhost:8000/api/v1/issues";
 
-// post tasks
+// post issue
 
 export const postIssue = async (issueObj) => {
   try {
@@ -16,7 +16,7 @@ export const postIssue = async (issueObj) => {
     };
   }
 };
-// get tasks
+// get issue
 
 export const getIssues = async () => {
   try {
@@ -30,7 +30,7 @@ export const getIssues = async () => {
     };
   }
 };
-// update tasks
+// update issue
 
 export const updateIssue = async (updateObj) => {
   try {
@@ -44,7 +44,7 @@ export const updateIssue = async (updateObj) => {
     };
   }
 };
-// delete tasks
+// delete issue
 
 export const deleteIssue = async (_id) => {
   try {
